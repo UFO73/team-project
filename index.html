@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="box-btn">
+        <button type="button" price-modal-open>Переглянути ціни</button>
+        <button type="button" booking-modal-open>Забронювати номер</button>
+        <button type="button" table-modal-open>Забронювати столик</button>
+    </div>
+    <div class="backdrop is-hidden" price-modal>
+        <div class="price-room-mobile">
+            <button type="button" class="mobile-price-close-btn" price-modal-close>
+                <svg class="close-price-btn" width="15" height="15">
+                    <use href="./images/symbol-defs.svg#close-modal"></use>
+                </svg>
+            </button>
+            <form name="price room" class="room-price-form model-box">
+                <strong class="room-price-title">ЦІНИ НА НОМЕР</strong>
+                <strong class="category-room">Двомісний люкс</strong>
+                <span class="form-text">Категорія номеру</span>
+                <div class="flex-box">
+                    <label class="price-lable-first">
+                        <input class="price-room-input" type="number" min="1" step="1" name="night" placeholder="1">
+                        <svg class="model-icon" width="20" height="12">
+                            <use href="./images/symbol-defs.svg#icon-model"></use>
+                        </svg>
+                        <span class="form-text-lable">Кількість ночей</span>
+                    </label>
+                    <label class="price-lable-second">
+                        <input class="price-room-input" type="number" name="price" placeholder="1000">
+                        <span class="form-text-lable">грн</span>
+                    </label>
+                </div>
+                <button type="submit " class="price-btn">ЗАБРОНЮВАТИ НОМЕР</button>
+            </form>
+        </div>
+    </div>
+    <div class="backdrop is-hidden-one" booking-modal>
+        <div class="booking-room-mobile">
+            <button type="button" class="mobile-booking-close-btn" booking-modal-close>
+                <svg class="model-icon" width="18" height="18">
+                    <use href="./images/symbol-defs.svg#close-modal"></use>
+                </svg>
+            </button>
+            <form name="booking-room" class="booking-form model-box">
+                <strong class="booking-room-title">ЗАБРОНЮВАТИ НОМЕР</strong>
+                <div class="flex-box-wrap">
+                    <label class="booking-lable">
+                        <input class="booking-room-input" type="text" minlength="2" name="name" placeholder="Ваше ім’я">
+                        <span class="booking-text-lable">На кого забронювати номер?</span>
+                    </label>
+                    <label class="booking-lable">
+                        <input class="booking-room-input" type="tel" name="phone" placeholder="+38 (___) ___-__-__">
+                        <span class="booking-text-lable">Номер телефону</span>
+                    </label>
+                    <div class="box"></div>
+                    <label class="booking-lable">
+                        <svg class="model-icon-chek" width="20" height="12">
+                            <use href="./images/symbol-defs.svg#icon-model"></use>
+                        </svg>
+                        <!-- <input class="booking-room-input" type="text" placeholder="Двомісний люкс"> -->
+                        <select class="booking-room-input">
+                            <option value="1" selected>Двомісний люкс</option>
+                            <option value="2">Двомісний</option>
+                            <option value="3">Трьохмісний</option>
+                            </select>
+                        <span class="booking-text-lable">Категорія номеру</span>
+                    </label>
+                    <label class="booking-lable">
+                        <svg class="model-icon-chek" width="20" height="12">
+                            <use href="./images/symbol-defs.svg#icon-model"></use>
+                        </svg>
+                        <input class="booking-room-input" type="number" name="chek-in" placeholder="Сьогодні">
+                        <span class="booking-text-lable">Дата заїзду</span>
+                    </label>
+                    <label class="booking-lable last">
+                        <svg class="model-icon-chek" width="20" height="12">
+                            <use href="./images/symbol-defs.svg#icon-model"></use>
+                        </svg>
+                        <input class="booking-room-input" type="number" name="chek-out" placeholder="Сьогодні">
+                        <span class="booking-text-lable">Дата виїзду</span>
+                    </label>
+                </div>
+                <button type="submit" class="booking-btn">ОФОРМИТИ БРОНЮВАННЯ</button>
+            </form>
+        </div>
+    </div>
+    <div class="backdrop is-hidden-two" table-modal>
+        <div class="booking-table-mobile">
+            <button type="button" class="mobile-booking-close-btn" table-modal-close>
+                <svg class="model-icon" width="14" height="14">
+                    <use href="./images/symbol-defs.svg#close-modal"></use>
+                </svg>
+            </button>
+            <form name="booking-restaurant" class="booking-table-form model-box">
+                <strong class="booking-table-title">ЗАБРОНЮВАТИ СТОЛИК</strong>
+                <div class="flex-box-wrap">
+                    <div class="box">
+                        <label class="booking-table-lable">
+                            <input class="booking-table-input" type="text" name="booking-name" placeholder="Ваше ім’я">
+                            <span class="booking-table-text">На кого забронювати столик?</span>
+                        </label>
+                        <label class="booking-table-lable">
+                            <input class="booking-table-input" type="tel" name="booking-phone" placeholder="+38 (___) ___-__-__">
+                            <span class="booking-table-text">Номер телефону</span>
+                        </label>
+                    </div>
+                    <div class="box">
+                        <label class="booking-table-lable">
+                            <svg class="model-icon-svg" width="20" height="12">
+                                <use href="./images/symbol-defs.svg#icon-model"></use>
+                            </svg>
+                            <input type="number" class="booking-table-input" name="guest" min="1" step="1" placeholder="2">
+                            <span class="booking-table-text">Столик на яку кількість осіб?</span>
+                        </label>
+                        <label class="booking-table-lable last">
+                            <svg class="model-icon-svg" width="20" height="12">
+                                <use href="./images/symbol-defs.svg#icon-model"></use>
+                            </svg>
+                            <input class="booking-table-input" type="number" name="booking-date" placeholder="Сьогодні">
+                            <span class="booking-table-text">На яку дату бронювати?</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="booking-table-btn">ОФОРМИТИ БРОНЮВАННЯ</button>
+            </form>
+        </div>
+    </div>
+    <script src="./model.js" type="module"></script>
+</body>
+</html>
